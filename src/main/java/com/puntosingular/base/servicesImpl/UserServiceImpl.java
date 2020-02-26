@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.puntosingular.base.converter.UserConverter;
 import com.puntosingular.base.dto.UserDTO;
+import com.puntosingular.base.models.User;
 import com.puntosingular.base.repository.UserRepository;
 import com.puntosingular.base.services.UserService;
 
@@ -38,6 +39,11 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public UserDTO findByName(String name) {
 		return userConverter.usertoUserDTO(userRepository.findByName(name));
+	}
+	
+	@Override
+	public void newUser(User user) {
+		this.userRepository.save(user);
 	}
 
 }
