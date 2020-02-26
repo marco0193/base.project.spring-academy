@@ -11,18 +11,18 @@ import org.springframework.stereotype.Service;
 import com.puntosingular.base.services.BaseService;
 
 @Service
-public class BaseServiceImpl implements BaseService{
+public class BaseServiceImpl implements BaseService {
 
-	private final static Logger LOG = Logger.getLogger("com.puntosingular.base.controller.BaseServiceImpl");
-	
-	
+	private final static Logger LOG = Logger.getLogger("com.puntosingular.base.servicesImpl.BaseServiceImpl");
+
 	@Override
 	public ResponseEntity<?> getHolaMundo() {
 		Map<String, Object> respuesta = new HashMap<>();
-		
-		LOG.info("Hola mundo desde spring boot");
-		respuesta.put("respuesta", "Hola mundo desde spring boot - getHolaMundo - 202 aceptted");
+
+		// System.out.println("hola");
+		LOG.info("Hola Mundo Desde Spring boot - getHolaMundo");
+		respuesta.put("respuesta", "Hola Mundo Desde Spring Boot - getHolaMundo - 282Accepted");
 		return new ResponseEntity<Map<String, Object>>(respuesta, HttpStatus.ACCEPTED);
 	}
-	
+
 }
